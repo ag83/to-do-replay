@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+.td-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.08), 0 0.5px 1.5px 0 rgba(0,0,0,.12);
+}
+.td-header__logo {
+    font-size: 2rem;
+    color: gray;
+    margin: 0 0 0 4rem;
+}
+
+.td-content {
+    max-width: 1920px;
+    margin: 6rem auto;
+}
