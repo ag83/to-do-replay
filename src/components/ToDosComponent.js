@@ -13,6 +13,7 @@ export default class ToDosComponent extends Component {
     }
     
     render() {
+        console.log(this.props.currentToDoList, this.props.redactedToDo);
         const addToDo = {
             redactedToDo: this.props.redactedToDo,
             addToDo: this.props.addToDo,

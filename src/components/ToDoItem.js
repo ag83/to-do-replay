@@ -6,7 +6,7 @@ export default class ToDoItem extends Component {
 	constructor(props) {
         super(props);
 
-        this.handleRedact = this.handleRedact.bind(this, props.todo);
+        this.handleRedact = this.handleRedact.bind(this, props.todo.id);
         this.handleDelete = this.handleDelete.bind(this, props.todo.id);
     }
 
@@ -14,8 +14,8 @@ export default class ToDoItem extends Component {
         this.props.deleteToDo(id);
     }
 
-    handleRedact(todo, evt) {
-        this.props.addRedactToDo(todo);
+    handleRedact(id, evt) {
+        this.props.addRedactToDo(id);
     }
     
     render() {

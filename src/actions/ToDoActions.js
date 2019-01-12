@@ -20,10 +20,10 @@ export function redactToDo(todo) {
 	};
 }
 
-export function addRedactToDo(todo) {
+export function addRedactToDo(id) {
 	return {
         type: ADD_REDACT_TODO,
-        payload: todo
+        payload: id
 	};
 }
 

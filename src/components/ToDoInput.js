@@ -8,18 +8,21 @@ export default class ToDoInput extends Component {
 
         this.state = {
             name: props.redactedToDo? props.redactedToDo.name : '',
-            description: props.redactedToDo? props.redactedToDo.description : ''
+            description: props.redactedToDo? props.redactedToDo.description : '',
+            id: props.redactedToDo? props.redactedToDo.id : null,
         };
 
         this.handleToDoChange = this.handleToDoChange.bind(this);
         this.handleToDoSubmit = this.handleToDoSubmit.bind(this);
     }
     
-    getDerivedStateFromProps(props, state) {
-        if(props.redactedToDo) {
+    static getDerivedStateFromProps(props, state, prevProps) {
+        
+        if(props.redactedToDo && props.redactedToDo.id !== state.id) {
             return {
                 name: props.redactedToDo.name,
-                description: props.redactedToDo.description
+                description: props.redactedToDo.description,
+                id: props.redactedToDo.id,
             };
         }
         return null;
@@ -41,7 +44,8 @@ export default class ToDoInput extends Component {
             }
             this.setState({
                 name: '',
-                description: ''
+                description: '',
+                id: null
             });
         }
     }
