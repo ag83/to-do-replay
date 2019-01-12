@@ -10,7 +10,6 @@ export default class App extends Component {
             <Fragment>
                 <header className="td-header"><h1 className="td-header__logo">To Do Replay</h1></header>
                 <ToDoContainer/>
-                <footer className="td-footer"></footer>
             </Fragment>
         );
       }
