@@ -28,7 +28,5 @@ export function getToDoById(todos, id) {
     const updatedToDo = todos.find((item) => {
         return item.id === id;
     });
-    console.log(id, updatedToDo);
     return {...updatedToDo};
 };
-
