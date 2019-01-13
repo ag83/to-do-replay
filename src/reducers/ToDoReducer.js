@@ -40,8 +40,8 @@ export default function todos(state = initialState, action) {
         case 'CLEAR_RECORD':
             return {...state, recordedActions: [], playStartToDoList: []}
         case 'PLAY_RECORD_START':
-            let temp = state.currentToDoList;
-            return {...state, isPlaying: true, currentToDoList: state.playStartToDoList, backUpToDoList: temp }
+            let temp = state.currentToDoList.map((item) => {return {...item}});
+            return {...state, isPlaying: true, currentToDoList: state.playStartToDoList.map((item) => {return {...item}}), backUpToDoList: temp }
         case 'PLAY_RECORD_END':
             return {...state, isPlaying: false, currentToDoList: state.backUpToDoList}
         case 'SAVE_RECORD':

@@ -104,10 +104,10 @@ export function playRecords() {
         for (let i=0; i < records.length; i++) {
             setTimeout(() => {
                 dispatch(records[i]);
-            }, i*2*1000);
+            }, (i+1)*2*1000);
         }
         setTimeout(() => {
             dispatch({type: PLAY_RECORD_END});
-        }, records.length*2*1000);
+        }, (records.length + 1)*2*1000);
     }
 }
