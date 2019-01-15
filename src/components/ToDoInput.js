@@ -61,6 +61,7 @@ export default class ToDoInput extends Component {
         return (
             <form className="td-input" onSubmit={this.handleToDoSubmit}>
                 <div className="td-input__title">
+                    <label htmlFor="name">Task name</label>
                     <input 
                         className="td-input__title-input"
                         type="text"
@@ -71,6 +72,7 @@ export default class ToDoInput extends Component {
                         />
                 </div>
                 <div className="td-input__description">
+                    <label htmlFor="description">Task description</label>
                     <textarea 
                         className="td-input__description-input"
                         placeholder="description"
@@ -79,9 +81,7 @@ export default class ToDoInput extends Component {
                         onChange={this.handleToDoChange}
                         />
                 </div>
-                <div className="td-input__submit">
-                    <button disabled={!this.checkToDo()} type="submit">{this.props.redactedToDo? 'Redact' : 'Add'}</button>
-                </div>    
+                <button className="td-input__submit" disabled={!this.checkToDo()} type="submit">{this.props.redactedToDo? 'Redact' : 'Add'}</button>
             </form>
         )
     }

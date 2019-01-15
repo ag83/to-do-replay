@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
@@ -18,8 +19,11 @@ module.exports = {
             use: ['babel-loader']
           },
           {
-            test: /\.css$/,
-            use: ["style-loader", "css-loader"]
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader!sass-loader",
+            })
           }
         ]
       },
@@ -31,7 +35,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
-        })
+        }),
+        new ExtractTextPlugin('style.css')
     ],
 
     devServer: {

@@ -4,7 +4,7 @@ import ToDoInput from "./ToDoInput";
 import ToDoList from "./ToDoList";
 import ToDoPlay from "./ToDoPlay";
 
-import '..//styles/todo.css';
+import '../styles/todo.scss';
 
 export default class ToDosComponent extends Component {
 

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import ToDoContainer from './containers/ToDoContainer';
 
-import './styles/main.css';
+import './styles/main.scss';
 
 export default class App extends Component {
     render() {
